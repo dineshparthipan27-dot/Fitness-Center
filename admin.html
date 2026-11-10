@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronForge - Admin Dashboard</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+
+            --primary-dark: #0a0a0a;
+            --primary-light: #121212;
+            --gold-main: #FF4500;
+
+            --gold-light: #ff7a45;
+            --bg-body: #050505;
+            --bg-card: #161616;
+            --text-main: #cccccc;
+            --text-dark: #ffffff;
+            --text-muted: #888888;
+            --border-soft: rgba(255, 69, 0, 0.15);
+
+            --success: #00e676;
+            --warning: #f59e0b;
+            --danger: #ff4d4d;
+            --info: #3b82f6;
+
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.8);
+            --shadow-hover: 0 20px 40px rgba(255, 69, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-main);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+
+        .sidebar {
+            width: 280px;
+            background-color: var(--primary-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.4s ease;
+            z-index: 1000;
+            position: fixed;
+            height: 100vh;
+            border-right: 1px solid var(--border-soft);
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 5, 5, 0.9);
+            z-index: 999;
+            backdrop-filter: blur(5px);
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-header {
+            padding: 30px 25px;
+            border-bottom: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-da {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-da i {
+            color: var(--gold-main);
+            font-size: 28px;
+        }
+
+        .close-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 25px 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 30px;
+            color: #888;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .menu-link i {
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .menu-link:hover {
+            color: #fff;
+            background: rgba(255, 69, 0, 0.05);
+        }
+
+        .menu-link:hover i {
+            color: var(--gold-main);
+        }
+
+        .menu-link.active {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(255, 69, 0, 0.15) 0%, transparent 100%);
+        }
+
+        .menu-link.active i {
+            color: var(--gold-main);
+        }
+
+        .menu-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--gold-main);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 10px var(--gold-main);
+        }
+
+        .sidebar-bottom {
+            padding: 20px 30px;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .logout-btn {
+            color: var(--danger);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .logout-btn:hover {
+            color: #ff7a45;
+            transform: translateX(5px);
+        }
+
+
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 280px);
+        }
+
+        .top-header {
+            background: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-soft);
+            position: sticky;
+            top: 0;
+            z-index: 998;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: var(--gold-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .user-email {
+            font-size: 13px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-main);
+            object-fit: cover;
+        }
+
+
+        .view-section {
+            display: none;
+            padding: 40px;
+            flex-direction: column;
+            gap: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .view-section.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-anim {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s ease-out;
+        }
+
+        .scroll-anim.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-heading {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading i {
+            color: var(--gold-main);
+            font-size: 22px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-card);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255, 69, 0, 0.4);
+        }
+
+
+        .analytics-hero {
+            background: var(--primary-light);
+            border: 1px solid var(--border-soft);
+            padding: 40px;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analytics-hero::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .hero-title span {
+            color: var(--gold-main);
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .stat-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            background: rgba(255, 69, 0, 0.1);
+            color: var(--gold-main);
+            border: 1px solid rgba(255, 69, 0, 0.2);
+        }
+
+        .stat-val {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .charts-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .chart-wrap {
+            height: 300px;
+            width: 100%;
+        }
+
+
+        .min-table-container {
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        .min-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+
+        }
+
+        .min-table th,
+        .min-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+        }
+
+        .min-table th {
+            color: var(--gold-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .min-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .badge.success {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .badge.warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+            border: 1px solid var(--warning);
+        }
+
+        .badge.danger {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .badge.info {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--info);
+            border: 1px solid var(--info);
+        }
+
+
+        .stock-bars-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .progress-group {
+            margin-bottom: 25px;
+        }
+
+        .prog-head {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .prog-bg {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .prog-fill {
+            height: 100%;
+            background: var(--gold-main);
+            border-radius: 10px;
+        }
+
+        .prog-fill.low {
+            background: var(--warning);
+        }
+
+        .prog-fill.critical {
+            background: var(--danger);
+        }
+
+
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .vip-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-soft);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .vip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background: var(--primary-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .vip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold-main);
+        }
+
+        .vip-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold-main);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+
+        .vip-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid var(--gold-main);
+            object-fit: cover;
+            position: relative;
+            margin: 30px auto 15px;
+            z-index: 2;
+            background: var(--primary-light);
+        }
+
+        .vip-name {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .vip-email {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .vip-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .vip-stats div span {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: block;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .vip-stats div strong {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .review-item i.fa-quote-left {
+            font-size: 30px;
+            color: rgba(255, 69, 0, 0.3);
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: var(--text-main);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .review-author {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold-main);
+        }
+
+
+        .settings-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold-main);
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
+        }
+
+        .btn-submit {
+            background: var(--gold-main);
+            color: #fff;
+            border: 2px solid var(--gold-main);
+            padding: 16px 35px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: transparent;
+            color: var(--gold-main);
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .error-msg {
+            color: var(--danger);
+            font-size: 12px;
+            margin-top: 8px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .success-banner {
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            display: none;
+            margin-top: 20px;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .toggle-box {
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .t-info h4 {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .t-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--gold-main);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(24px);
+        }
+
+
+        @media (max-width: 1024px) {
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts-row,
+            .settings-layout,
+            .stock-bars-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .vip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .menu-toggle,
+            .close-btn {
+                display: block;
+            }
+
+            .top-header {
+                padding: 15px 20px;
+            }
+
+            .view-section {
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .stats-row,
+            .vip-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-right .user-info {
+                display: none;
+            }
+
+            .content-box {
+                overflow-x: scroll
+            }
+
+            .card {
+                overflow: hidden;
+            }
+        }
+
+        .logo {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <a href="admin.html" class="logo">
+                        <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+                    </a>
+                    <button class="close-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li><a class="menu-link active" data-target="view-analytics"><i class="fa-solid fa-chart-line"></i>
+                            Gym Analytics</a></li>
+                    <li><a class="menu-link" data-target="view-memberships"><i class="fa-solid fa-id-card"></i>
+                            Memberships</a></li>
+                    <li><a class="menu-link" data-target="view-inventory"><i class="fa-solid fa-box-open"></i> Equipment
+                            & Stock</a></li>
+                    <li><a class="menu-link" data-target="view-elite"><i class="fa-solid fa-crown"></i> Elite
+                            Members</a></li>
+                    <li><a class="menu-link" data-target="view-settings"><i class="fa-solid fa-sliders"></i> Gym
+                            Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-bottom">
+                <a href="login.html" class="logout-btn"><i class="fa-solid fa-power-off"></i> System Logout</a>
+            </div>
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="openSidebar"><i class="fa-solid fa-bars-staggered"></i></button>
+                    <h1 class="page-title brand-font" id="pageTitle">Gym Analytics</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-role">Head Admin</span>
+                            <span class="user-email" id="displayEmail">admin@ironforge.com</span>
+                        </div>
+                        <img src="asset/f2.webp" alt="Admin" class="avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==============================
+                 1. Analytics View 
+            =============================== -->
+            <div id="view-analytics" class="view-section active">
+                <div class="analytics-hero scroll-anim">
+                    <h2 class="hero-title brand-font" id="welcomeMsg">Welcome back, <span>Admin</span>.</h2>
+                    <p style="color: #aaaaaa; font-size: 15px;">IronForge had 124 check-ins today and generated $3,200
+                        in new memberships.</p>
+                </div>
+
+                <div class="stats-row scroll-anim">
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <div class="stat-val">2,450</div>
+                            <div class="stat-label">Active Members</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <div>
+                            <div class="stat-val">$145.2K</div>
+                            <div class="stat-label">Monthly Rev</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                        <div>
+                            <div class="stat-val">840</div>
+                            <div class="stat-label">Daily Footfall</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                        <div>
+                            <div class="stat-val">15</div>
+                            <div class="stat-label">Trainers Active</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-row scroll-anim">
+                    <div class="card">
+                        <h3 class="section-heading"><i class="fa-solid fa-chart-area"></i> Revenue Trend (YTD)</h3>
+                        <div class="chart-wrap"><canvas id="revenueChart" class="chart"></canvas></div>
+                    </div>
+                    <div class="card">
+                        <h3 class="section-heading"><i class="fa-solid fa-chart-pie"></i> Membership Types</h3>
+                        <div class="chart-wrap"><canvas id="categoryChart" class="chart"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-receipt"></i> Recent Premium Sign-ups</h3>
+                    <div class="min-table-container">
+                        <table class="min-table">
+                            <thead>
+                                <tr>
+                                    <th>Member ID</th>
+                                    <th>Name</th>
+                                    <th>Plan</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#MEM-0992</td>
+                                    <td>Marcus Sterling</td>
+                                    <td>Elite Annual</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="badge success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#MEM-0991</td>
+                                    <td>Elena Vance</td>
+                                    <td>Pro Monthly</td>
+                                    <td><strong>$120.00</strong></td>
+                                    <td><span class="badge warning">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#MEM-0990</td>
+                                    <td>John Doe</td>
+                                    <td>Elite Annual</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="badge success">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==============================
+                 2. Memberships View (NEW) 
+            =============================== -->
+            <div id="view-memberships" class="view-section">
+
+                <div class="stats-row scroll-anim">
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+                        <div>
+                            <div class="stat-val">124</div>
+                            <div class="stat-label">New This Month</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <div>
+                            <div class="stat-val">42</div>
+                            <div class="stat-label">Expiring Soon</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <div>
+                            <div class="stat-val">88%</div>
+                            <div class="stat-label">Retention Rate</div>
+                        </div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-icon" style="color:var(--danger)"><i class="fa-solid fa-user-minus"></i></div>
+                        <div>
+                            <div class="stat-val">12%</div>
+                            <div class="stat-label">Churn Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-calendar-xmark"></i> Memberships Expiring in 7
+                        Days</h3>
+                    <div class="min-table-container">
+                        <table class="min-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Plan Type</th>
+                                    <th>Expiry Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Michael Scott</td>
+                                    <td>+1 (555) 123-4567</td>
+                                    <td>Pro Monthly</td>
+                                    <td><span style="color:var(--danger); font-weight: 700;">Nov 12, 2026</span></td>
+                                    <td><a href="404.html" class="badge info" style="border:none; cursor:pointer;"><i
+                                                class="fa-solid fa-bell"></i> Send Reminder</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Dwight Schrute</td>
+                                    <td>+1 (555) 987-6543</td>
+                                    <td>Elite Annual</td>
+                                    <td><span style="color:var(--warning); font-weight: 700;">Nov 14, 2026</span></td>
+                                    <td><a href="404.html" class="badge info" style="border:none; cursor:pointer;"><i
+                                                class="fa-solid fa-bell"></i> Send Reminder</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Pam Beesly</td>
+                                    <td>+1 (555) 456-7890</td>
+                                    <td>Day Pass</td>
+                                    <td><span style="color:var(--danger); font-weight: 700;">Nov 11, 2026</span></td>
+                                    <td><a href="404.html" class="badge info" style="border:none; cursor:pointer;"><i
+                                                class="fa-solid fa-bell"></i> Send Reminder</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-envelope-open-text"></i> Recent Web Inquiries
+                        (Contact Form)</h3>
+                    <div class="min-table-container">
+                        <table class="min-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Interest</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nov 10, 2026</td>
+                                    <td>Tom Hardy</td>
+                                    <td>tom.h@example.com</td>
+                                    <td>Personal Training Info</td>
+                                    <td><span class="badge warning">Needs Follow-up</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Nov 09, 2026</td>
+                                    <td>Chris Hemsworth</td>
+                                    <td>chris@example.com</td>
+                                    <td>Elite Membership Cost</td>
+                                    <td><span class="badge success">Replied</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==============================
+                 3. Equipment & Stock View (NEW) 
+            =============================== -->
+            <div id="view-inventory" class="view-section">
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-prescription-bottle-medical"></i> Supplements &
+                        Merchandise Stock</h3>
+                    <div class="stock-bars-layout">
+                        <div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>IronForge Whey Protein (Vanilla)</span> <span>85/100
+                                        Tubs</span></div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>IronForge Whey Protein (Chocolate)</span> <span
+                                        style="color:var(--warning)">40/100 Tubs</span></div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill low" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>Creatine Monohydrate</span> <span>60/100 Tubs</span></div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>Pre-Workout (Fruit Punch)</span> <span
+                                        style="color:var(--danger)">5/50 Tubs</span></div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill critical" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>Gym Towels (Merch)</span> <span
+                                        style="color:var(--danger)">12/200 Units</span></div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill critical" style="width: 15%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <div class="prog-head"><span>Shaker Bottles (Merch)</span> <span>45/100 Units</span>
+                                </div>
+                                <div class="prog-bg">
+                                    <div class="prog-fill" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-screwdriver-wrench"></i> Equipment Maintenance Log
+                    </h3>
+                    <div class="min-table-container">
+                        <table class="min-table">
+                            <thead>
+                                <tr>
+                                    <th>Equipment ID</th>
+                                    <th>Machine Name</th>
+                                    <th>Last Serviced</th>
+                                    <th>Condition</th>
+                                    <th>Action Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#EQ-TRD-04</td>
+                                    <td>Treadmill Unit 04</td>
+                                    <td>Oct 15, 2026</td>
+                                    <td><span class="badge danger">Out of Order</span></td>
+                                    <td>Motor replacement scheduled for Nov 15</td>
+                                </tr>
+                                <tr>
+                                    <td>#EQ-CBL-02</td>
+                                    <td>Cable Crossover Station</td>
+                                    <td>Nov 01, 2026</td>
+                                    <td><span class="badge warning">Needs Lubrication</span></td>
+                                    <td>Assign to maintenance staff</td>
+                                </tr>
+                                <tr>
+                                    <td>#EQ-SQT-01</td>
+                                    <td>Power Squat Rack 01</td>
+                                    <td>Oct 20, 2026</td>
+                                    <td><span class="badge success">Optimal</span></td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td>#EQ-DMB-SET</td>
+                                    <td>Dumbbell Rack (5kg - 50kg)</td>
+                                    <td>Nov 05, 2026</td>
+                                    <td><span class="badge success">Optimal</span></td>
+                                    <td>None</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==============================
+                 4. Elite Members View (NEW) 
+            =============================== -->
+            <div id="view-elite" class="view-section">
+                <div class="vip-grid scroll-anim">
+
+                    <div class="vip-card">
+                        <span class="vip-badge">Tier 1 Elite</span>
+                        <img src="asset/woman1.webp" alt="VIP" class="vip-avatar">
+                        <h4 class="vip-name brand-font">Sarah Jenkins</h4>
+                        <p class="vip-email">Active since 2023</p>
+                        <div class="vip-stats">
+                            <div><span>Trainer</span><strong>Marcus</strong></div>
+                            <div><span>Sessions</span><strong>45</strong></div>
+                            <div><span>Goal</span><strong>Hypertrophy</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="vip-card">
+                        <span class="vip-badge" style="background: #3b82f6;">Tier 2 Pro</span>
+                        <img src="asset/man1.webp" alt="VIP" class="vip-avatar">
+                        <h4 class="vip-name brand-font">David Miller</h4>
+                        <p class="vip-email">Active since 2024</p>
+                        <div class="vip-stats">
+                            <div><span>Trainer</span><strong>Elena</strong></div>
+                            <div><span>Sessions</span><strong>22</strong></div>
+                            <div><span>Goal</span><strong>Weight Loss</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="vip-card">
+                        <span class="vip-badge">Tier 1 Elite</span>
+                        <img src="asset/woman2.webp" alt="VIP" class="vip-avatar">
+                        <h4 class="vip-name brand-font">Emily Roberts</h4>
+                        <p class="vip-email">Active since 2021</p>
+                        <div class="vip-stats">
+                            <div><span>Trainer</span><strong>Marcus</strong></div>
+                            <div><span>Sessions</span><strong>112</strong></div>
+                            <div><span>Goal</span><strong>Powerlifting</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card scroll-anim">
+                    <h3 class="section-heading"><i class="fa-solid fa-star"></i> Personal Training Feedback</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <div>
+                                <p class="review-text">"Marcus completely transformed my squat form. The Elite
+                                    membership is worth every penny for the 1-on-1 coaching alone. The facility is
+                                    always pristine."</p>
+                                <div class="review-author">Emily Roberts &nbsp;<span
+                                        style="color:var(--gold-main); font-size:12px;"><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i></span></div>
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <div>
+                                <p class="review-text">"Love the new cryotherapy recovery room. Elena’s nutrition plan
+                                    helped me drop 10 lbs in 2 months. Best gym in the downtown area!"</p>
+                                <div class="review-author">David Miller &nbsp;<span
+                                        style="color:var(--gold-main); font-size:12px;"><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star-half-stroke"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==============================
+                 5. Settings / Form Validation Area 
+            =============================== -->
+            <div id="view-settings" class="view-section">
+                <div class="settings-layout">
+                    <div class="card scroll-anim">
+                        <h3 class="section-heading"><i class="fa-solid fa-building"></i> Gym Configuration</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 30px;">Update IronForge's
+                            contact details and public address.</p>
+
+                        <form id="gymSettingsForm" novalidate>
+                            <div class="form-grid">
+                                <div class="form-group full">
+                                    <label>Gym Name *</label>
+                                    <input type="text" id="gymName" class="form-control"
+                                        placeholder="e.g. IronForge Elite">
+                                    <div class="error-msg" id="errName"><i class="fa-solid fa-circle-exclamation"></i>
+                                        Gym name cannot be empty.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Support Email *</label>
+                                    <input type="email" id="gymEmail" class="form-control"
+                                        placeholder="admin@ironforge.com">
+                                    <div class="error-msg" id="errEmail"><i class="fa-solid fa-circle-exclamation"></i>
+                                        Enter a valid email address.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number *</label>
+                                    <input type="text" id="gymPhone" class="form-control" placeholder="10-digit number">
+                                    <div class="error-msg" id="errPhone"><i class="fa-solid fa-circle-exclamation"></i>
+                                        Enter a valid 10-digit phone number.</div>
+                                </div>
+                                <div class="form-group full">
+                                    <label>Headquarters Address *</label>
+                                    <textarea id="gymAddr" class="form-control" rows="3"
+                                        placeholder="Full street address"></textarea>
+                                    <div class="error-msg" id="errAddr"><i class="fa-solid fa-circle-exclamation"></i>
+                                        Address cannot be empty.</div>
+                                </div>
+                                <div class="form-group full">
+                                    <button type="submit" class="btn-submit" id="submitBtn">
+                                        <i class="fa-solid fa-floppy-disk"></i> Save Configuration
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="success-banner" id="successMsg">
+                                <i class="fa-solid fa-circle-check"></i> Configuration saved successfully!
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card scroll-anim">
+                        <h3 class="section-heading"><i class="fa-solid fa-sliders"></i> Security Preferences</h3>
+                        <div class="toggle-box">
+                            <div class="t-info">
+                                <h4>Maintenance Mode</h4>
+                                <p>Hide website from public view.</p>
+                            </div>
+                            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-box">
+                            <div class="t-info">
+                                <h4>Two-Factor Auth (2FA)</h4>
+                                <p>Require OTP for admin login.</p>
+                            </div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-box">
+                            <div class="t-info">
+                                <h4>New Lead Alerts</h4>
+                                <p>Get email push on new signups.</p>
+                            </div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const emailValue = localStorage.getItem("UserMail");
+            const activeEmail = emailValue || "admin@ironforge.com"; // Fallback email
+
+
+            const extractedName = activeEmail.split("@")[0];
+            const formattedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+
+
+            const displayEmailEl = document.getElementById("displayEmail");
+            if (displayEmailEl) displayEmailEl.textContent = activeEmail;
+
+            const welcomeEl = document.getElementById("welcomeMsg");
+            if (welcomeEl) {
+                welcomeEl.innerHTML = `Welcome back, <span>${formattedName}</span>.`;
+            }
+
+
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            function openSidebar() { sidebar.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+            function closeSidebar() { sidebar.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+            document.getElementById('openSidebar').addEventListener('click', openSidebar);
+            document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+
+
+            const menuLinks = document.querySelectorAll('.sidebar-menu .menu-link');
+            const views = document.querySelectorAll('.view-section');
+            const pageTitle = document.getElementById('pageTitle');
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (this.classList.contains('active')) return;
+
+
+                    menuLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    views.forEach(v => v.classList.remove('active'));
+                    document.getElementById(this.getAttribute('data-target')).classList.add('active');
+
+
+                    pageTitle.innerText = this.innerText.trim();
+
+
+                    if (window.innerWidth <= 768) { closeSidebar(); }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    triggerAnimations();
+                });
+            });
+
+
+            const revCtx = document.getElementById('revenueChart');
+            if (revCtx) {
+                new Chart(revCtx.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Revenue',
+                            data: [45000, 52000, 48000, 71000, 89000, 115000],
+                            borderColor: '#FF4500',
+                            backgroundColor: 'rgba(255, 69, 0, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#fff',
+                            pointBorderColor: '#FF4500',
+                            pointRadius: 5
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: { y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } }, x: { grid: { display: false } } }
+                    }
+                });
+            }
+
+            const catCtx = document.getElementById('categoryChart');
+            if (catCtx) {
+                new Chart(catCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Elite Annual', 'Pro Monthly', 'Day Pass', 'PT Sessions'],
+                        datasets: [{
+                            data: [45, 30, 15, 10],
+                            backgroundColor: ['#FF4500', '#ff7a45', '#444444', '#222222'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { legend: { position: 'bottom', labels: { color: '#ccc' } } },
+                        cutout: '70%'
+                    }
+                });
+            }
+
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+            }, { threshold: 0.1 });
+
+            function triggerAnimations() {
+                document.querySelectorAll('.scroll-anim').forEach(el => {
+                    el.classList.remove('show');
+                    setTimeout(() => observer.observe(el), 50);
+                });
+            }
+            triggerAnimations();
+
+
+            document.getElementById('gymSettingsForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                const name = document.getElementById('gymName').value.trim();
+                const email = document.getElementById('gymEmail').value.trim();
+                const phone = document.getElementById('gymPhone').value.trim();
+                const addr = document.getElementById('gymAddr').value.trim();
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const phoneRegex = /^[0-9]{10}$/; // Basic 10 digit check
+
+                if (name === '') { document.getElementById('errName').style.display = 'block'; isValid = false; }
+                else { document.getElementById('errName').style.display = 'none'; }
+
+                if (!emailRegex.test(email)) { document.getElementById('errEmail').style.display = 'block'; isValid = false; }
+                else { document.getElementById('errEmail').style.display = 'none'; }
+
+                if (!phoneRegex.test(phone)) { document.getElementById('errPhone').style.display = 'block'; isValid = false; }
+                else { document.getElementById('errPhone').style.display = 'none'; }
+
+                if (addr === '') { document.getElementById('errAddr').style.display = 'block'; isValid = false; }
+                else { document.getElementById('errAddr').style.display = 'none'; }
+
+                if (isValid) {
+                    const btn = document.getElementById('submitBtn');
+                    const successMsg = document.getElementById('successMsg');
+
+                    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+                    btn.disabled = true;
+
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Save Configuration';
+                        btn.disabled = false;
+                        successMsg.style.display = 'flex';
+                        window.location.href = "404.html";
+
+                        setTimeout(() => { successMsg.style.display = 'none'; }, 400);
+                    }, 500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

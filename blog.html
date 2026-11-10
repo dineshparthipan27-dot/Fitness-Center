@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="fitness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li class="mobile-login"><a href="login.html" class="login-btn nav-item">Login</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="login.html" class="login-btn desktop-login">Login</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="blog-hero-premium" id="blog-hero">
+        <div class="b-hero-bg gsap-parallax-bg"></div>
+
+
+        <div class="sparks-container">
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+        </div>
+
+        <div class="b-hero-overlay"></div>
+
+        <div class="b-hero-content">
+            <div class="featured-badge gsap-badge">
+                <i class="fa-solid fa-star"></i> FEATURED ARTICLE
+            </div>
+
+            <h1 class="b-hero-title">
+                <span class="gsap-word">THE</span>
+                <span class="gsap-word">SCIENCE</span>
+                <span class="gsap-word">OF</span> <br>
+                <span class="neon-text gsap-word">HYPERTROPHY</span>
+            </h1>
+
+            <div class="b-meta-info">
+                <span class="b-meta-item gsap-meta"><i class="fa-solid fa-user-pen"></i> Coach Marcus</span>
+                <span class="b-meta-item gsap-meta"><i class="fa-solid fa-calendar-days"></i> Nov 10, 2026</span>
+                <span class="b-meta-item gsap-meta"><i class="fa-solid fa-clock"></i> 8 Min Read</span>
+            </div>
+
+            <p class="b-hero-desc gsap-desc">
+                Unlock the biomechanical secrets to maximizing muscle growth. We break down the latest research on
+                progressive overload, protein synthesis, and elite recovery protocols to help you shatter your plateaus.
+            </p>
+
+            <div class="b-hero-action gsap-btn">
+                <a href="404.html" class="btn-primary-glow btn-animated">
+                    Read Full Article <i class="fa-solid fa-book-open-reader"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="blog-trending" id="trending">
+        <div class="trending-container">
+            <div class="trending-header gsap-trend-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <span>Trending Insights</span>
+                </div>
+                <h2 class="section-title">TOP READS OF THE <span class="neon-text">WEEK</span></h2>
+                <p class="srv-desc-center">Stay ahead of the curve. Dive into our most popular articles covering
+                    cutting-edge training techniques, nutrition hacks, and recovery science.</p>
+            </div>
+
+            <div class="trending-grid">
+                <div class="trend-card gsap-trend-card" data-aos="fade-up" data-aos-duration="1200"
+                    data-aos-delay="100">
+                    <div class="trend-img-box">
+                        <span class="trend-category">Training</span>
+                        <img src="asset/f7.webp" alt="Deadlift Form">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="trend-content">
+                        <div class="trend-meta">
+                            <span><i class="fa-solid fa-calendar-day"></i> Nov 08, 2026</span>
+                            <span><i class="fa-solid fa-stopwatch"></i> 5 Min</span>
+                        </div>
+                        <h3 class="trend-title">Mastering the Conventional Deadlift: Biomechanics Explained</h3>
+                        <p class="trend-excerpt">Fix your lower back pain and maximize your pull by understanding the
+                            exact leverages and muscle activations required...</p>
+                        <a href="404.html" class="trend-read-btn">Read Article <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <div class="trend-card gsap-trend-card" data-aos="fade-up" data-aos-duration="1200"
+                    data-aos-delay="250">
+                    <div class="trend-img-box">
+                        <span class="trend-category">Nutrition</span>
+                        <img src="asset/f13.webp" alt="Protein Macros">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="trend-content">
+                        <div class="trend-meta">
+                            <span><i class="fa-solid fa-calendar-day"></i> Nov 05, 2026</span>
+                            <span><i class="fa-solid fa-stopwatch"></i> 7 Min</span>
+                        </div>
+                        <h3 class="trend-title">The Anabolic Window Myth: When Should You Consume Protein?</h3>
+                        <p class="trend-excerpt">Does the 30-minute post-workout window really exist? We dive into the
+                            latest sports nutrition research to find the truth...</p>
+                        <a href="404.html" class="trend-read-btn">Read Article <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <div class="trend-card gsap-trend-card" data-aos="fade-up" data-aos-duration="1200"
+                    data-aos-delay="400">
+                    <div class="trend-img-box">
+                        <span class="trend-category">Recovery</span>
+                        <img src="asset/f11.webp" alt="Ice Bath">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="trend-content">
+                        <div class="trend-meta">
+                            <span><i class="fa-solid fa-calendar-day"></i> Nov 02, 2026</span>
+                            <span><i class="fa-solid fa-stopwatch"></i> 6 Min</span>
+                        </div>
+                        <h3 class="trend-title">Ice Bath vs Sauna: Which Accelerates Muscle Recovery Faster?</h3>
+                        <p class="trend-excerpt">Contrast therapy is taking over the fitness world. Learn the
+                            physiological benefits of extreme cold and heat exposure...</p>
+                        <a href="404.html" class="trend-read-btn">Read Article <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-categories" id="categories">
+        <div class="category-container">
+            <div class="category-header gsap-cat-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Explore Topics</span>
+                </div>
+                <h2 class="section-title">BROWSE BY <span class="neon-text">CATEGORY</span></h2>
+                <p class="srv-desc-center">Find exactly what you need. From building raw strength to mastering your
+                    mental resilience, dive into our specialized archives.</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="cat-bg-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <div class="cat-icon-box"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3 class="cat-title">Training</h3>
+                    <p class="cat-desc">Workout routines, biomechanics, and progression strategies.</p>
+                    <a href="404.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="cat-bg-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                    <div class="cat-icon-box"><i class="fa-solid fa-bowl-food"></i></div>
+                    <h3 class="cat-title">Nutrition</h3>
+                    <p class="cat-desc">Macro splits, supplement guides, and performance fueling.</p>
+                    <a href="404.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="cat-bg-icon"><i class="fa-solid fa-spa"></i></div>
+                    <div class="cat-icon-box"><i class="fa-solid fa-spa"></i></div>
+                    <h3 class="cat-title">Recovery</h3>
+                    <p class="cat-desc">Injury prevention, sleep optimization, and active rest protocols.</p>
+                    <a href="404.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="cat-bg-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="cat-icon-box"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="cat-title">Mindset</h3>
+                    <p class="cat-desc">Motivation, discipline, and building a relentless mental state.</p>
+                    <a href="404.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-feed" id="latest-feed">
+        <div class="feed-container">
+            <div class="feed-header gsap-feed-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-rss"></i>
+                    <span>The IronForge Feed</span>
+                </div>
+                <h2 class="section-title">LATEST <span class="neon-text">ARTICLES</span></h2>
+                <p class="srv-desc-center">Stay updated with the freshest insights, workout strategies, and nutrition
+                    advice straight from our elite coaching team.</p>
+            </div>
+
+            <div class="feed-grid">
+                <div class="feed-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="feed-img-wrapper">
+                        <span class="feed-tag">Training</span>
+                        <img src="asset/f6.webp" alt="Strength vs Hypertrophy">
+                        <div class="feed-overlay"></div>
+                    </div>
+                    <div class="feed-content">
+                        <div class="feed-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 12, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 6 Min</span>
+                        </div>
+                        <h3 class="feed-title">Strength vs Hypertrophy: Which Should You Train For?</h3>
+                        <p class="feed-excerpt">Understanding the difference between training for raw power versus
+                            muscle size, and how to effectively combine both in your routine.</p>
+                        <div class="feed-footer">
+                            <div class="author-info">
+                                <i class="fa-solid fa-user-ninja"></i> Coach Elena
+                            </div>
+                            <a href="404.html" class="read-more-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+                    <div class="feed-img-wrapper">
+                        <span class="feed-tag">Nutrition</span>
+                        <img src="asset/f12.webp" alt="Pre-Workout Meal">
+                        <div class="feed-overlay"></div>
+                    </div>
+                    <div class="feed-content">
+                        <div class="feed-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 10, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 4 Min</span>
+                        </div>
+                        <h3 class="feed-title">The Ultimate Pre-Workout Meal Guide for Explosive Energy</h3>
+                        <p class="feed-excerpt">Stop wasting your workouts on an empty stomach. Learn exactly what
+                            macros to consume 90 minutes before hitting the iron.</p>
+                        <div class="feed-footer">
+                            <div class="author-info">
+                                <i class="fa-solid fa-user-ninja"></i> Dr. Vance
+                            </div>
+                            <a href="404.html" class="read-more-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="feed-img-wrapper">
+                        <span class="feed-tag">Recovery</span>
+                        <img src="asset/f5.webp" alt="Sleep Optimization">
+                        <div class="feed-overlay"></div>
+                    </div>
+                    <div class="feed-content">
+                        <div class="feed-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 08, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 8 Min</span>
+                        </div>
+                        <h3 class="feed-title">Sleep: The Ultimate Performance Enhancer You Are Ignoring</h3>
+                        <p class="feed-excerpt">You grow outside the gym. Discover how REM and deep sleep cycles
+                            drastically affect testosterone levels and muscle repair.</p>
+                        <div class="feed-footer">
+                            <div class="author-info">
+                                <i class="fa-solid fa-user-ninja"></i> Coach Marcus
+                            </div>
+                            <a href="404.html" class="read-more-link">Read <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-action" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <a href="404.html" class="btn-outline-glow">View All Articles <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="blog-expert-tips" id="expert-tips">
+        <div class="expert-container">
+            <div class="expert-header gsap-expert-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                    <span>Coach's Corner</span>
+                </div>
+                <h2 class="section-title">EXPERT <span class="neon-text">ADVICE</span></h2>
+                <p class="srv-desc-center">Directly from the minds of our elite trainers. Actionable tips and
+                    unvarnished truths to elevate your training and mindset.</p>
+            </div>
+
+            <div class="expert-wrapper">
+                <div class="expert-card gsap-expert-card">
+                    <div class="expert-img-box">
+                        <div class="expert-glow-bg"></div>
+                        <img src="asset/f3.webp" alt="Coach Training">
+                    </div>
+                    <div class="expert-content-box">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <h3 class="tip-title">Progressive Overload is Non-Negotiable</h3>
+                        <p class="tip-text">"Stop changing your routine every single week. Pick 4 to 5 compound
+                            movements, master the biomechanics, and focus strictly on adding weight or reps over time.
+                            Consistency beats confusion every single time."</p>
+                        <div class="coach-profile">
+                            <div class="coach-avatar">
+                                <img src="asset/f2.webp" alt="Coach Marcus">
+                            </div>
+                            <div class="coach-details">
+                                <h4>Marcus Sterling</h4>
+                                <span>Head of Strength</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expert-card reversed gsap-expert-card">
+                    <div class="expert-img-box">
+                        <div class="expert-glow-bg"></div>
+                        <img src="asset/f1.webp" alt="Coach Advice">
+                    </div>
+                    <div class="expert-content-box">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <h3 class="tip-title">Nutrition Dictates Your Recovery</h3>
+                        <p class="tip-text">"You can train with maximum intensity, but if you don't feed the machine,
+                            you simply won't grow. Prioritize your post-workout protein window and never underestimate
+                            the anabolic power of deep sleep."</p>
+                        <div class="coach-profile">
+                            <div class="coach-avatar">
+                                <img src="asset/f10.webp" alt="Coach Elena">
+                            </div>
+                            <div class="coach-details">
+                                <h4>Elena Vance</h4>
+                                <span>Elite Nutrition Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="blog-vlog-showcase" id="vlogs">
+        <div class="vlogs-container">
+            <div class="vlogs-header gsap-vlog-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Visual Motivation</span>
+                </div>
+                <h2 class="section-title">WATCH & <span class="neon-text">LEARN</span></h2>
+                <p class="srv-desc-center">Immerse yourself in our high-definition video guides, form tutorials, and
+                    exclusive behind-the-scenes IronForge vlogs.</p>
+            </div>
+
+            <div class="vlog-split-layout">
+
+                <div class="vlog-main-player gsap-main-player">
+                    <img src="asset/fi.webp" alt="Squat Tutorial" class="main-vid-img">
+                    <div class="main-vid-overlay"></div>
+
+                    <div class="main-play-center">
+                        <div class="pulse-ring"></div>
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="main-vid-info">
+                        <span class="vlog-tag">Featured Tutorial</span>
+                        <h3 class="main-vid-title">Flawless Squat Mechanics for Maximum Depth</h3>
+                        <div class="main-vid-meta">
+                            <span><i class="fa-solid fa-eye"></i> 24.5K Views</span>
+                            <span><i class="fa-solid fa-clock"></i> 12:45 Mins</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="vlog-playlist-sidebar gsap-playlist">
+                    <div class="playlist-header">
+                        <h4>Up Next</h4>
+                        <a href="404.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="playlist-list">
+
+                        <div class="playlist-item active">
+                            <div class="pl-thumb">
+                                <img src="asset/f10.webp" alt="Motivation">
+                                <div class="pl-duration">08:20</div>
+                            </div>
+                            <div class="pl-details">
+                                <h5>Forging a Champion's Mindset</h5>
+                                <span>18.2K Views</span>
+                            </div>
+                            <div class="playing-bars">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="playlist-item">
+                            <div class="pl-thumb">
+                                <img src="asset/f12.webp" alt="Meal Prep">
+                                <div class="pl-duration">15:10</div>
+                                <div class="pl-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="pl-details">
+                                <h5>Pro Meal Prep: 5 Days of Macros</h5>
+                                <span>32.1K Views</span>
+                            </div>
+                        </div>
+
+
+                        <div class="playlist-item">
+                            <div class="pl-thumb">
+                                <img src="asset/f13.webp" alt="Supplements">
+                                <div class="pl-duration">10:05</div>
+                                <div class="pl-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="pl-details">
+                                <h5>Supplements Explained: What Works?</h5>
+                                <span>45K Views</span>
+                            </div>
+                        </div>
+
+
+                        <div class="playlist-item">
+                            <div class="pl-thumb">
+                                <img src="asset/f1.webp" alt="Deadlift">
+                                <div class="pl-duration">14:30</div>
+                                <div class="pl-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="pl-details">
+                                <h5>Deadlift: Prevent Lower Back Pain</h5>
+                                <span>89K Views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-newsletter" id="newsletter">
+        <div class="nl-bg-image"></div>
+        <div class="nl-bg-overlay"></div>
+
+        <div class="nl-floating-elements">
+            <div class="nl-float-icon icon-1"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="nl-float-icon icon-2"><i class="fa-solid fa-bolt"></i></div>
+        </div>
+
+        <div class="nl-container">
+            <div class="nl-content">
+                <div class="subtitle-badge gsap-nl-elem">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Stay Updated</span>
+                </div>
+
+                <h2 class="nl-title gsap-nl-elem">STAY <span class="neon-text">FORGED</span></h2>
+
+                <p class="nl-desc gsap-nl-elem">
+                    Join an elite circle of relentless individuals. Get our latest articles, expert training tips, and
+                    exclusive IronForge updates delivered straight to your inbox.
+                </p>
+
+                <form class="nl-form gsap-nl-elem" id="newsletter-form">
+                    <div class="nl-input-group" id="nl-input-container">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input type="email" id="nl-email" placeholder="Enter your email address" class="nl-input">
+                        <button type="submit" class="btn-primary-glow nl-submit-btn" id="nl-submit-btn">
+                            <span class="btn-text">Subscribe</span> <i class="fa-solid fa-paper-plane btn-icon"></i>
+                        </button>
+                    </div>
+
+
+                    <div class="nl-status-message" id="nl-status"></div>
+
+                    <div class="nl-disclaimer">
+                        <i class="fa-solid fa-shield-halved"></i> We respect your privacy. No spam, ever.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium" id="contact">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <a href="index.html" class="logo">
+                        <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+                    </a>
+                    <ul class="footer-contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Periyakollappatty, Chinna Thirupathi,
+                            Salem, Tamil Nadu
+                        </li>
+                        <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="404.html">Strength Training</a></li>
+                        <li><a href="404.html">Cardio Endurance</a></li>
+                        <li><a href="404.html">Yoga & Flexibility</a></li>
+                        <li><a href="404.html">CrossFit</a></li>
+                        <li><a href="404.html">Personal Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <h3>Join Our Inner Circle</h3>
+                    <p>Subscribe to our newsletter for exclusive fitness tips, early access to programs, and diet plan
+                        inspiration.</p>
+                    <form class="newsletter-form" id="newsletter-form" novalidate>
+                        <div class="input-container">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="error-message" id="email-error">Please enter a valid email address.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 IronForge Fitness. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2, // ஸ்மூத்னஸ் வேகம் (நார்மல் 1.2)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // எஃபெக்ட் ஸ்மூத்னஸ்
+            smooth: true,
+            mouseMultiplier: 1,
+        });
+
+
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+
+        gsap.ticker.lagSmoothing(0);
+    </script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        });
+    </script>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+        heroTl.from(".gsap-parallax-bg", {
+            scale: 1.3,
+            duration: 2.5,
+            ease: "power2.out"
+        })
+            .from(".gsap-badge", {
+                y: -30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "back.out(1.5)"
+            }, "-=1.5")
+            .from(".gsap-word", {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15
+            }, "-=1")
+            .from(".gsap-meta", {
+                scale: 0.5,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "back.out(2)"
+            }, "-=0.5")
+            .from(".gsap-desc", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            }, "-=0.4")
+            .from(".gsap-btn", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            }, "-=0.6");
+
+
+        gsap.utils.toArray('.spark').forEach(spark => {
+            gsap.set(spark, {
+                x: () => Math.random() * window.innerWidth,
+                y: () => window.innerHeight + 50,
+                opacity: () => Math.random() * 0.8 + 0.2
+            });
+
+            gsap.to(spark, {
+                y: () => "-=" + (Math.random() * 500 + 300),
+                x: () => "+=" + (Math.random() * 200 - 100),
+                opacity: 0,
+                duration: () => Math.random() * 3 + 2,
+                repeat: -1,
+                ease: "none",
+                delay: () => Math.random() * 3
+            });
+        });
+
+
+        document.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 30; // 30px movement
+            const y = (e.clientY / window.innerHeight - 0.5) * 30;
+
+            gsap.to(".gsap-parallax-bg", {
+                x: x,
+                y: y,
+                duration: 1.5,
+                ease: "power2.out"
+            });
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-cat-head", {
+            scrollTrigger: {
+                trigger: ".blog-categories",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-feed-head", {
+            scrollTrigger: {
+                trigger: ".blog-feed",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-expert-head", {
+            scrollTrigger: {
+                trigger: ".blog-expert-tips",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.utils.toArray(".gsap-expert-card").forEach((card) => {
+            let isReversed = card.classList.contains("reversed");
+
+            gsap.from(card.querySelector(".expert-img-box"), {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 75%",
+                },
+                x: isReversed ? 100 : -100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            });
+
+            gsap.from(card.querySelector(".expert-content-box"), {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 75%",
+                },
+                x: isReversed ? -100 : 100,
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                delay: 0.3,
+                ease: "power4.out"
+            });
+        });
+
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-vlog-head", {
+            scrollTrigger: {
+                trigger: ".blog-vlog-showcase",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        const vlogTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".vlog-split-layout",
+                start: "top 75%",
+            }
+        });
+
+        vlogTl.from(".gsap-main-player", {
+            x: -80,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out"
+        })
+            .from(".gsap-playlist", {
+                x: 80,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            }, "-=0.8")
+            .from(".playlist-item", {
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "power3.out"
+            }, "-=0.5");
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-nl-elem", {
+            scrollTrigger: {
+                trigger: ".blog-newsletter",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const nlForm = document.getElementById("newsletter-form");
+            const nlEmail = document.getElementById("nl-email");
+            const nlStatus = document.getElementById("nl-status");
+            const nlContainer = document.getElementById("nl-input-container");
+            const nlSubmitBtn = document.getElementById("nl-submit-btn");
+            const btnText = nlSubmitBtn.querySelector(".btn-text");
+            const btnIcon = nlSubmitBtn.querySelector(".btn-icon");
+
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            nlForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const emailValue = nlEmail.value.trim();
+
+
+                nlContainer.classList.remove("error-shake");
+                nlStatus.classList.remove("show", "error", "success");
+
+
+                if (emailValue === "") {
+                    showError("Please enter your email address.");
+                    return;
+                }
+
+                if (!emailPattern.test(emailValue)) {
+                    showError("Please enter a valid email address (e.g., name@email.com).");
+                    return;
+                }
+
+
+                nlSubmitBtn.disabled = true;
+                btnText.innerText = "Sending...";
+                btnIcon.className = "fa-solid fa-spinner fa-spin"; // FontAwesome Spinner
+
+                setTimeout(() => {
+
+                    nlSubmitBtn.disabled = false;
+                    btnText.innerText = "Subscribe";
+                    btnIcon.className = "fa-solid fa-paper-plane";
+
+                    nlStatus.innerText = "Welcome to IronForge! Your subscription is confirmed.";
+                    nlStatus.className = "nl-status-message success show";
+                    nlEmail.value = ""; // Clear input field
+
+
+                    setTimeout(() => {
+                        nlStatus.classList.remove("show");
+                    }, 4000);
+
+                }, 2000);
+            });
+
+
+            function showError(message) {
+                nlStatus.innerText = message;
+                nlStatus.className = "nl-status-message error show";
+                nlContainer.classList.add("error-shake");
+
+
+                setTimeout(() => {
+                    nlContainer.classList.remove("error-shake");
+                }, 400);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

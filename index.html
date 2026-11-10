@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fitness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li class="mobile-login"><a href="login.html" class="login-btn nav-item">Login</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="login.html" class="login-btn desktop-login">Login</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero-premium" id="home">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <span class="hero-badge" data-aos="fade-down" data-aos-duration="1000">
+                    <i class="fa-solid fa-bolt"></i> Elite Fitness Destination
+                </span>
+
+                <h1 data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                    UNLEASH YOUR <br><span class="text-orange">TRUE POTENTIAL</span>
+                </h1>
+
+                <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    Step into a world-class training facility equipped with cutting-edge machines, expert coaching, and
+                    a community driven by results. Don't just train—transform.
+                </p>
+
+                <div class="hero-actions" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <a href="404.html" class="btn-primary-glow">
+                        Start Free Trial <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="404.html" class="btn-video-play">
+                        <i class="fa-regular fa-circle-play"></i> Watch Gym Tour
+                    </a>
+                </div>
+
+                <div class="hero-stats" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
+                    <div class="stat-box">
+                        <h3><i class="fa-solid fa-users"></i> 5k+</h3>
+                        <p>Active Members</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <h3><i class="fa-solid fa-star"></i> 4.9</h3>
+                        <p>Google Ratings</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <h3><i class="fa-solid fa-award"></i> 20+</h3>
+                        <p>Pro Trainers</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="hero-visuals">
+                <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="icon-box"><i class="fa-solid fa-dumbbell"></i></div>
+                    <div class="card-text">
+                        <h4>Premium Equipments</h4>
+                        <p>Imported bio-mechanic machines</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+                    <div class="card-text">
+                        <h4>24/7 Access</h4>
+                        <p>Train on your own schedule</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="card-text">
+                        <h4>Personalized Diet</h4>
+                        <p>Custom nutrition plans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-premium" id="about">
+        <div class="about-container">
+            <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="1200">
+                <div class="css-shape-blob"></div>
+                <div class="about-img-main">
+                    <img src="asset/f1.webp" alt="Premium Gym Facility">
+                </div>
+                <div class="about-img-float">
+                    <div class="experience-badge">
+                        <span class="exp-number">10+</span>
+                        <span class="exp-text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text-wrapper" data-aos="fade-left" data-aos-duration="1200">
+                <h4 class="section-subtitle">
+                    <i class="fa-solid fa-dumbbell"></i> Who We Are
+                </h4>
+                <h2 class="section-title">WE ARE MORE THAN JUST A <span class="text-orange">GYM</span></h2>
+                <p class="about-desc">
+                    IronForge is a premium fitness facility dedicated to building stronger bodies and sharper minds.
+                    With elite trainers, state-of-the-art equipment, and a results-driven community, we provide an
+                    unmatched training experience.
+                </p>
+
+                <ul class="about-features">
+                    <li><i class="fa-solid fa-circle-check"></i> Certified Expert Trainers</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Personalized Nutrition Plans</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Modern & High-Tech Equipments</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 24/7 Premium Access</li>
+                </ul>
+
+                <a href="404.html" class="btn-primary-glow">Discover Our Services <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="services-premium" id="services">
+        <div class="services-container">
+            <div class="services-header" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-fire"></i> Our Programs</h4>
+                <h2 class="section-title">CHOOSE YOUR <span class="text-orange">BATTLE</span></h2>
+                <p class="services-desc">Elevate your fitness journey with our specialized training programs designed to
+                    push your limits and deliver guaranteed results.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <div class="service-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Strength Training</h3>
+                    <p>Build pure muscle mass and increase your raw power with our advanced weightlifting programs and
+                        free weights.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="service-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <h3>Cardio Endurance</h3>
+                    <p>Boost your stamina and burn calories efficiently with our high-intensity cardio zones and
+                        endurance routines.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="service-icon"><i class="fa-solid fa-yin-yang"></i></div>
+                    <h3>Yoga & Flexibility</h3>
+                    <p>Achieve mental clarity and physical flexibility through guided meditation and advanced yoga
+                        sessions.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>CrossFit Training</h3>
+                    <p>Challenge yourself with our intense functional movements and high-energy CrossFit workouts.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                    <div class="service-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                    <h3>Combat & Boxing</h3>
+                    <p>Learn self-defense, improve agility, and release stress with our professional boxing and MMA
+                        training.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Personal Training</h3>
+                    <p>Get 1-on-1 coaching with customized workout routines and diet plans tailored exactly to your body
+                        goals.</p>
+                    <a href="404.html" class="service-link">Explore Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="schedule-premium" id="schedule">
+        <div class="schedule-container">
+            <div class="schedule-header" data-aos="fade-down" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-calendar-days"></i> Class Schedule</h4>
+                <h2 class="section-title">PLAN YOUR <span class="text-orange">WORKOUT</span></h2>
+                <p class="schedule-desc">Stay consistent and track your fitness routine with our perfectly timed daily
+                    classes guided by professional trainers.</p>
+            </div>
+
+            <div class="schedule-grid">
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 06:00 AM - 07:00 AM
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Power Yoga</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: Sarah Jenkins</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: Medium</p>
+                    </div>
+                    <a href="404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 07:30 AM - 08:30 AM
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Advanced CrossFit</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: Alex Carter</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: High</p>
+                    </div>
+                    <a href="404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 05:00 PM - 06:00 PM
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Boxing & MMA</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: Mike Tyson</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: Extreme</p>
+                    </div>
+                    <a href="#404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 06:30 PM - 07:30 PM
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Strength & Core</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: David Miller</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: High</p>
+                    </div>
+                    <a href="404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 08:00 PM - 09:00 PM
+                    </div>
+                    <div class="schedule-info">
+                        <h3>HIIT Fat Burn</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: Emma Watson</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: High</p>
+                    </div>
+                    <a href="404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+
+                <div class="schedule-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <div class="time-badge">
+                        <i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 AM (Sun)
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Weekend Bootcamp</h3>
+                        <p><i class="fa-solid fa-user-ninja"></i> Trainer: All Experts</p>
+                        <p><i class="fa-solid fa-fire"></i> Intensity: Extreme</p>
+                    </div>
+                    <a href="404.html" class="btn-outline-glow">Book Slot</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="trainers-premium" id="trainers">
+        <div class="trainers-container">
+            <div class="trainers-header" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-user-group"></i> Our Experts</h4>
+                <h2 class="section-title">MEET YOUR <span class="text-orange">TRAINERS</span></h2>
+                <p class="trainers-desc">Train with industry-leading professionals who are dedicated to helping you
+                    crush your fitness goals with personalized guidance.</p>
+            </div>
+
+            <div class="trainers-grid">
+                <div class="trainer-card" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">
+                    <div class="trainer-img">
+                        <img src="asset/f2.webp" alt="Trainer Alex Carter">
+                        <div class="trainer-social">
+                            <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Alex Carter</h3>
+                        <p class="trainer-role">CrossFit Expert</p>
+                        <p class="trainer-bio">10+ years experience in high-intensity functional training.</p>
+                    </div>
+                </div>
+
+                <div class="trainer-card" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="trainer-img">
+                        <img src="asset/f3.webp" alt="Trainer Sarah Jenkins">
+                        <div class="trainer-social">
+                            <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Sarah Jenkins</h3>
+                        <p class="trainer-role">Yoga & Flexibility</p>
+                        <p class="trainer-bio">Certified yoga instructor focusing on mind-body connection.</p>
+                    </div>
+                </div>
+
+                <div class="trainer-card" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="500">
+                    <div class="trainer-img">
+                        <img src="asset/fi.webp" alt="Trainer Mike Tyson">
+                        <div class="trainer-social">
+                            <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Mike Tyson</h3>
+                        <p class="trainer-role">Boxing Coach</p>
+                        <p class="trainer-bio">Professional boxing coach specialized in agility and power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bmi-premium" id="bmi">
+        <div class="bmi-container">
+            <div class="bmi-content" data-aos="fade-right" data-aos-duration="1200">
+                <h4 class="section-subtitle"><i class="fa-solid fa-calculator"></i> Body Mass Index</h4>
+                <h2 class="section-title">KNOW YOUR <span class="text-orange">FITNESS LEVEL</span></h2>
+                <p class="bmi-desc">Understanding your BMI is the first step towards transforming your body. Enter your
+                    height and weight below to find out where you stand and how we can help you reach your goals.</p>
+
+                <ul class="bmi-chart">
+                    <li><span class="indicator underweight"></span> Underweight: Below 18.5</li>
+                    <li><span class="indicator normal"></span> Normal: 18.5 - 24.9</li>
+                    <li><span class="indicator overweight"></span> Overweight: 25.0 - 29.9</li>
+                    <li><span class="indicator obese"></span> Obese: 30.0 and Above</li>
+                </ul>
+            </div>
+
+            <div class="bmi-calculator-wrapper" data-aos="fade-left" data-aos-duration="1200">
+                <div class="bmi-card">
+                    <h3>Calculate Your BMI</h3>
+
+                    <div class="input-group">
+                        <input type="number" id="bmi-height" placeholder="Height in cm (e.g. 175)">
+                        <i class="fa-solid fa-arrows-up-down"></i>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="bmi-weight" placeholder="Weight in kg (e.g. 70)">
+                        <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+
+                    <button class="btn-primary-glow w-100" id="calc-btn">Calculate Now <i
+                            class="fa-solid fa-arrow-right"></i></button>
+
+                    <div class="bmi-result-area" id="bmi-result-area">
+                        <div class="bmi-score">
+                            <span id="bmi-value">--</span>
+                        </div>
+                        <div class="bmi-text">
+                            <p id="bmi-status">Enter values to see result</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="pricing-premium" id="pricing">
+        <div class="pricing-container">
+            <div class="pricing-header" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-tags"></i> Membership Plans</h4>
+                <h2 class="section-title">CHOOSE YOUR <span class="text-orange">MEMBERSHIP</span></h2>
+                <p class="pricing-desc">Flexible pricing plans designed to suit your fitness journey. No hidden fees, no
+                    long-term contracts. Just pure fitness.</p>
+
+                <div class="billing-toggle">
+                    <span class="billing-label active" id="monthly-label">Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="billing-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="billing-label" id="yearly-label">Yearly <span class="save-badge">Save 20%</span></span>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <div class="card-head">
+                        <h3>Basic</h3>
+                        <p>For beginners</p>
+                    </div>
+                    <div class="price-amount">
+                        <h2>$<span class="price-val" data-monthly="29" data-yearly="278">29</span></h2>
+                        <span class="billing-cycle">/ month</span>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Gym Access (Off-Peak)</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Equipments</li>
+                        <li><i class="fa-solid fa-check"></i> Free Locker</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Group Classes</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Personal Trainer</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Spa & Sauna Access</li>
+                    </ul>
+                    <a href="404.html" class="btn-outline-glow w-100">Choose Basic</a>
+                </div>
+
+                <div class="price-card premium-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-head">
+                        <h3>Pro</h3>
+                        <p>For dedicated athletes</p>
+                    </div>
+                    <div class="price-amount">
+                        <h2>$<span class="price-val" data-monthly="59" data-yearly="566">59</span></h2>
+                        <span class="billing-cycle">/ month</span>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> 24/7 Gym Access</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced Equipments</li>
+                        <li><i class="fa-solid fa-check"></i> Free Locker & Towel</li>
+                        <li><i class="fa-solid fa-check"></i> All Group Classes</li>
+                        <li><i class="fa-solid fa-check"></i> Customized Diet Plan</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Personal Trainer</li>
+                    </ul>
+                    <a href="404.html" class="btn-primary-glow w-100" style="justify-content: center;">Choose Pro</a>
+                </div>
+
+                <div class="price-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                    <div class="card-head">
+                        <h3>Elite</h3>
+                        <p>For ultimate results</p>
+                    </div>
+                    <div class="price-amount">
+                        <h2>$<span class="price-val" data-monthly="99" data-yearly="950">99</span></h2>
+                        <span class="billing-cycle">/ month</span>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> 24/7 VIP Access</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced Equipments</li>
+                        <li><i class="fa-solid fa-check"></i> All Group Classes</li>
+                        <li><i class="fa-solid fa-check"></i> Weekly Diet Adjustments</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Personal Trainer</li>
+                        <li><i class="fa-solid fa-check"></i> Spa & Sauna Access</li>
+                    </ul>
+                    <a href="404.html" class="btn-outline-glow w-100">Choose Elite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="testimonials-premium" id="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-star"></i> Success Stories</h4>
+                <h2 class="section-title">WHAT OUR <span class="text-orange">MEMBERS</span> SAY</h2>
+                <p class="testimonials-desc">Real results from real people. See how IronForge has transformed the lives
+                    of our dedicated members.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Joining IronForge was the best decision of my life. The trainers are
+                        incredibly supportive, and the equipment is top-notch. I lost 15kg in just 4 months!"</p>
+                    <div class="client-info">
+                        <img src="asset/man1.webp" alt="John Doe">
+                        <div class="client-details">
+                            <h4>David Wilson</h4>
+                            <span>Weight Loss Journey</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The atmosphere here is electric. It pushes you to go harder every
+                        single day. The CrossFit sessions have completely changed my stamina and core strength."</p>
+                    <div class="client-info">
+                        <img src="asset/woman1.webp" alt="Jane Smith">
+                        <div class="client-details">
+                            <h4>Emma Roberts</h4>
+                            <span>CrossFit Athlete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="testimonial-text">"I love the 24/7 access and the premium spa facilities. After a heavy
+                        powerlifting session, relaxing in the sauna is exactly what my muscles need to recover."</p>
+                    <div class="client-info">
+                        <img src="asset/man2.webp" alt="Mike Johnson">
+                        <div class="client-details">
+                            <h4>Michael Chang</h4>
+                            <span>Powerlifter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gallery-premium" id="gallery">
+        <div class="gallery-container">
+            <div class="gallery-header" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="section-subtitle"><i class="fa-solid fa-camera"></i> Our Facility</h4>
+                <h2 class="section-title">IRONFORGE <span class="text-orange">GALLERY</span></h2>
+                <p class="gallery-desc">Take a look inside our world-class fitness center equipped with premium machines
+                    and dedicated workout zones.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item wide-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">
+                    <img src="asset/f4.webp" alt="Workout Zone">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
+                    <img src="asset/f1.webp" alt="Dumbbells">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item tall-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+                    <img src="asset/f5.webp" alt="Crossfit">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
+                    <img src="asset/fi.webp" alt="Gym Floor">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="500">
+                    <img src="asset/f3.webp" alt="Yoga Session">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="600">
+                    <img src="asset/f6.webp" alt="Personal Training">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <span class="close-lightbox" id="close-lightbox"><i class="fa-solid fa-xmark"></i></span>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Expanded Image">
+        </div>
+    </section>
+
+
+
+    <footer class="footer-premium" id="contact">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <a href="index.html" class="logo">
+                        <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+                    </a>
+                    <ul class="footer-contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Periyakollappatty, Chinna Thirupathi,
+                            Salem, Tamil Nadu
+                        </li>
+                        <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="404.html">Strength Training</a></li>
+                        <li><a href="404.html">Cardio Endurance</a></li>
+                        <li><a href="404.html">Yoga & Flexibility</a></li>
+                        <li><a href="404.html">CrossFit</a></li>
+                        <li><a href="404.html">Personal Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <h3>Join Our Inner Circle</h3>
+                    <p>Subscribe to our newsletter for exclusive fitness tips, early access to programs, and diet plan
+                        inspiration.</p>
+                    <form class="newsletter-form" id="newsletter-form" novalidate>
+                        <div class="input-container">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="error-message" id="email-error">Please enter a valid email address.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 IronForge Fitness. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2, // ஸ்மூத்னஸ் வேகம் (நார்மல் 1.2)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // எஃபெக்ட் ஸ்மூத்னஸ்
+            smooth: true,
+            mouseMultiplier: 1,
+        });
+
+
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+
+        gsap.ticker.lagSmoothing(0);
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("About Us section initialized");
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('resize', function () {
+                AOS.refresh();
+            });
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const scheduleCards = document.querySelectorAll('.schedule-card');
+            scheduleCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function () {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('resize', function () {
+                AOS.refresh();
+            });
+        });
+
+
+
+
+        const heightInput = document.getElementById('bmi-height');
+        const weightInput = document.getElementById('bmi-weight');
+        const calcBtn = document.getElementById('calc-btn');
+        const bmiValueDisplay = document.getElementById('bmi-value');
+        const bmiStatusDisplay = document.getElementById('bmi-status');
+        const resultArea = document.getElementById('bmi-result-area');
+
+        calcBtn.addEventListener('click', function () {
+            const heightCm = parseFloat(heightInput.value);
+            const weightKg = parseFloat(weightInput.value);
+
+            if (isNaN(heightCm) || isNaN(weightKg) || heightCm <= 0 || weightKg <= 0) {
+                bmiValueDisplay.textContent = "Error";
+                bmiStatusDisplay.textContent = "Please enter valid numbers";
+                bmiStatusDisplay.style.color = "#e74c3c";
+                resultArea.style.borderColor = "#e74c3c";
+                return;
+            }
+
+            const heightM = heightCm / 100;
+            const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+
+            bmiValueDisplay.textContent = bmi;
+
+            let status = "";
+            let color = "";
+
+            if (bmi < 18.5) {
+                status = "Underweight - Time to bulk up!";
+                color = "#3498db";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                status = "Normal - Great job, maintain it!";
+                color = "#2ecc71";
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+                status = "Overweight - Let's burn some fat!";
+                color = "#f1c40f";
+            } else {
+                status = "Obese - Join us to transform!";
+                color = "#e74c3c";
+            }
+
+            bmiStatusDisplay.textContent = status;
+            bmiStatusDisplay.style.color = color;
+            bmiValueDisplay.style.color = color;
+            resultArea.style.borderColor = color;
+            resultArea.style.boxShadow = `0 0 20px ${color}40`;
+        });
+
+
+
+        const billingCheckbox = document.getElementById('billing-checkbox');
+        const monthlyLabel = document.getElementById('monthly-label');
+        const yearlyLabel = document.getElementById('yearly-label');
+        const priceValues = document.querySelectorAll('.price-val');
+        const billingCycles = document.querySelectorAll('.billing-cycle');
+
+        billingCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                monthlyLabel.classList.remove('active');
+                yearlyLabel.classList.add('active');
+
+                priceValues.forEach(price => {
+                    price.textContent = price.getAttribute('data-yearly');
+                });
+
+                billingCycles.forEach(cycle => {
+                    cycle.textContent = '/ year';
+                });
+            } else {
+                yearlyLabel.classList.remove('active');
+                monthlyLabel.classList.add('active');
+
+                priceValues.forEach(price => {
+                    price.textContent = price.getAttribute('data-monthly');
+                });
+
+                billingCycles.forEach(cycle => {
+                    cycle.textContent = '/ month';
+                });
+            }
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('resize', function () {
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            });
+        });
+
+
+
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeLightbox = document.getElementById('close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const imgSrc = this.querySelector('img').getAttribute('src');
+                lightboxImg.setAttribute('src', imgSrc);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeLightbox.addEventListener('click', function () {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function (e) {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+
+</html>

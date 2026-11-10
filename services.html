@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="fitness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li class="mobile-login"><a href="login.html" class="login-btn nav-item">Login</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="login.html" class="login-btn desktop-login">Login</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero-premium" id="services-hero">
+        <div class="srv-hero-bg"></div>
+        <div class="srv-hero-overlay"></div>
+
+        <div class="srv-hero-content">
+            <div class="srv-badge gsap-srv-elem">
+                <i class="fa-solid fa-bolt"></i> OUR EXPERTISE
+            </div>
+
+            <h1 class="srv-title gsap-srv-elem">ELITE <span class="neon-text">TRAINING</span> PROGRAMS</h1>
+
+            <p class="srv-desc gsap-srv-elem">
+                Unlock your true potential with our specialized workout regimens. From high-intensity interval training
+                to elite bodybuilding, we have the perfect program to forge your ultimate physique.
+            </p>
+
+            <div class="srv-action gsap-srv-elem">
+                <a href="404.html" class="btn-primary-glow">
+                    Explore Services <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="srv-personal" id="personal-training">
+        <div class="srv-personal-container">
+            <div class="srv-personal-image">
+                <div class="pt-glow-bg"></div>
+                <img src="asset/f9.webp" alt="1-on-1 Personal Training" class="gsap-pt-img">
+
+                <div class="pt-floating-badge gsap-pt-badge">
+                    <i class="fa-solid fa-crosshairs"></i>
+                    <div class="pt-badge-text">
+                        <h4>100%</h4>
+                        <span>Focused on You</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="srv-personal-content">
+                <div class="subtitle-badge" data-aos="fade-up" data-aos-duration="1000">
+                    <i class="fa-solid fa-user-ninja"></i>
+                    <span>Personal Training</span>
+                </div>
+
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    1-ON-1 <span class="neon-text">COACHING</span>
+                </h2>
+
+                <p class="srv-desc-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Shatter your plateaus with an elite coach dedicated solely to your progress. We analyze your
+                    biomechanics, build a bespoke regimen, and push you beyond what you thought was possible.
+                </p>
+
+                <div class="pt-features-list">
+                    <div class="pt-feature-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="pt-feature-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <div class="pt-feature-info">
+                            <h3>Customized Regimens</h3>
+                            <p>Workouts tailored exactly to your body type, goals, and current fitness level.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-feature-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="pt-feature-icon"><i class="fa-solid fa-person-running"></i></div>
+                        <div class="pt-feature-info">
+                            <h3>Form & Technique Mastery</h3>
+                            <p>Perfect your biomechanics to prevent injuries and maximize muscle activation.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-feature-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="pt-feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="pt-feature-info">
+                            <h3>Constant Tracking</h3>
+                            <p>We monitor your strength gains, body composition, and adjust dynamically.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="srv-group-classes" id="group-classes">
+        <div class="srv-group-container">
+            <div class="srv-group-header gsap-group-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-users-rectangle"></i>
+                    <span>Group Fitness</span>
+                </div>
+                <h2 class="section-title">THE SYNERGY OF THE <span class="neon-text">PACK</span></h2>
+                <p class="srv-desc-center">Train together, conquer together. Our group classes are engineered to build
+                    endurance, strength, and a relentless community spirit.</p>
+            </div>
+
+            <div class="group-class-grid">
+                <div class="class-card gsap-class-card">
+                    <img src="asset/f5.webp" alt="HIIT Class" class="class-bg-img">
+                    <div class="class-overlay"></div>
+                    <div class="class-content">
+                        <div class="class-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                        <h3>HIIT Burnout</h3>
+                        <p class="class-details">High-Intensity Interval Training designed to shred fat and push your
+                            cardiovascular limits to the absolute max.</p>
+                        <a href="404.html" class="class-btn">Join Class <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="class-card gsap-class-card">
+                    <img src="asset/f3.webp" alt="Power Yoga" class="class-bg-img">
+                    <div class="class-overlay"></div>
+                    <div class="class-content">
+                        <div class="class-icon"><i class="fa-solid fa-om"></i></div>
+                        <h3>Power Yoga</h3>
+                        <p class="class-details">A dynamic flow focusing on core strength, extreme flexibility, and
+                            mental resilience. Master your body weight.</p>
+                        <a href="404.html" class="class-btn">Join Class <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="class-card gsap-class-card">
+                    <img src="asset/f7.webp" alt="Aerobics & Cardio" class="class-bg-img">
+                    <div class="class-overlay"></div>
+                    <div class="class-content">
+                        <div class="class-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h3>Rhythmic Aerobics</h3>
+                        <p class="class-details">High-energy cardio sessions synced to adrenaline-pumping music. Perfect
+                            for stamina building and fat loss.</p>
+                        <a href="404.html" class="class-btn">Join Class <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="class-card gsap-class-card">
+                    <img src="asset/fi.webp" alt="Combat Fitness" class="class-bg-img">
+                    <div class="class-overlay"></div>
+                    <div class="class-content">
+                        <div class="class-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                        <h3>Combat & MMA Fit</h3>
+                        <p class="class-details">Learn striking, agility, and defensive maneuvers in a high-octane mixed
+                            martial arts conditioning class.</p>
+                        <a href="404.html" class="class-btn">Join Class <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="srv-regimens" id="specialized-regimens">
+        <div class="srv-regimens-container">
+            <div class="srv-regimens-header gsap-regimen-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                    <span>Specialized Regimens</span>
+                </div>
+                <h2 class="section-title">FORGE YOUR <span class="neon-text">ULTIMATE</span> FORM</h2>
+                <p class="srv-desc-center">Take your training beyond the basics. Our specialized programs are engineered
+                    for extreme results, pushing your physical limits to new frontiers.</p>
+            </div>
+
+            <div class="regimen-wrapper">
+                <div class="regimen-row gsap-regimen-row">
+                    <div class="regimen-bg-number">01</div>
+                    <div class="regimen-image">
+                        <img src="asset/f10.webp" alt="CrossFit Training">
+                        <div class="regimen-overlay-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    </div>
+                    <div class="regimen-content" data-aos="fade-left" data-aos-duration="1200">
+                        <h3 class="regimen-title">CrossFit & <span class="neon-text">Functional</span></h3>
+                        <p class="regimen-desc">A high-intensity crucible combining weightlifting, gymnastics, and
+                            metabolic conditioning. Build raw functional power, agility, and unstoppable endurance that
+                            translates to real-world strength.</p>
+                        <ul class="regimen-features">
+                            <li><i class="fa-solid fa-check"></i> High-Intensity WODs</li>
+                            <li><i class="fa-solid fa-check"></i> Olympic Lifting Techniques</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced Mobility Work</li>
+                        </ul>
+                        <a href="404.html" class="btn-outline-glow mt-4">Join The Program</a>
+                    </div>
+                </div>
+
+                <div class="regimen-row reversed gsap-regimen-row">
+                    <div class="regimen-bg-number right-num">02</div>
+                    <div class="regimen-image">
+                        <img src="asset/f8.webp" alt="Powerlifting">
+                        <div class="regimen-overlay-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                    </div>
+                    <div class="regimen-content" data-aos="fade-right" data-aos-duration="1200">
+                        <h3 class="regimen-title">Elite <span class="neon-text">Powerlifting</span></h3>
+                        <p class="regimen-desc">Master the big three: Squat, Bench, and Deadlift. Our expert
+                            powerlifting coaches focus on biomechanics, progressive overload, and explosive strength to
+                            help you shatter your personal records.</p>
+                        <ul class="regimen-features">
+                            <li><i class="fa-solid fa-check"></i> 1RM Maximization</li>
+                            <li><i class="fa-solid fa-check"></i> Biomechanical Analysis</li>
+                            <li><i class="fa-solid fa-check"></i> CNS Recovery Protocols</li>
+                        </ul>
+                        <a href="404.html" class="btn-outline-glow mt-4">Join The Program</a>
+                    </div>
+                </div>
+
+                <div class="regimen-row gsap-regimen-row">
+                    <div class="regimen-bg-number">03</div>
+                    <div class="regimen-image">
+                        <img src="asset/f1.webp" alt="Bodybuilding">
+                        <div class="regimen-overlay-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    </div>
+                    <div class="regimen-content" data-aos="fade-left" data-aos-duration="1200">
+                        <h3 class="regimen-title">Pro <span class="neon-text">Bodybuilding</span></h3>
+                        <p class="regimen-desc">Sculpt aesthetic perfection. This regimen focuses on hypertrophy, muscle
+                            isolation, and extreme conditioning. Perfect for stage prep or building a flawless,
+                            symmetrical physique.</p>
+                        <ul class="regimen-features">
+                            <li><i class="fa-solid fa-check"></i> Hypertrophy Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Posing & Stage Prep</li>
+                            <li><i class="fa-solid fa-check"></i> Precision Nutrition Splitting</li>
+                        </ul>
+                        <a href="404.html" class="btn-outline-glow mt-4">Join The Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="srv-recovery" id="recovery">
+        <div class="recovery-container">
+            <div class="recovery-header gsap-rec-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-spa"></i>
+                    <span>Recovery & Wellness</span>
+                </div>
+                <h2 class="section-title">OPTIMAL <span class="neon-text">REJUVENATION</span></h2>
+                <p class="srv-desc-center">True growth happens outside the gym floor. Accelerate your healing, prevent
+                    injuries, and rejuvenate your muscles with our world-class recovery facilities.</p>
+            </div>
+
+            <div class="recovery-wrapper">
+                <div class="recovery-visual gsap-rec-img">
+                    <div class="rec-glow-backdrop"></div>
+                    <img src="asset/f11.webp" alt="Massage and Spa Therapy" class="rec-main-img">
+                    <div class="rec-watermark">HEAL</div>
+                </div>
+
+                <div class="recovery-glass-panel gsap-rec-panel">
+                    <div class="rec-feature-item">
+                        <div class="rec-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <div class="rec-info">
+                            <h3>Cryotherapy & Ice Bath</h3>
+                            <p>Submerge into our temperature-controlled cold plunges to instantly reduce muscle
+                                inflammation and speed up CNS recovery.</p>
+                        </div>
+                    </div>
+
+                    <div class="rec-feature-item">
+                        <div class="rec-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                        <div class="rec-info">
+                            <h3>Infrared Sauna</h3>
+                            <p>Flush out toxins, improve blood circulation, and relax deep muscle tissues with our
+                                premium cedarwood infrared saunas.</p>
+                        </div>
+                    </div>
+
+                    <div class="rec-feature-item">
+                        <div class="rec-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                        <div class="rec-info">
+                            <h3>Deep Tissue Massage</h3>
+                            <p>Expert sports therapists available on-site to relieve knots, improve flexibility, and
+                                break down scar tissue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="srv-nutrition" id="nutrition">
+        <div class="nutrition-container">
+            <div class="nutrition-content">
+                <div class="subtitle-badge" data-aos="fade-up" data-aos-duration="1000">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Nutritional Counseling</span>
+                </div>
+
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    FUEL YOUR <span class="neon-text">PERFORMANCE</span>
+                </h2>
+
+                <p class="srv-desc-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    You can't out-train a bad diet. Our certified sports nutritionists craft personalized meal plans and
+                    supplement protocols to fuel your grueling workouts and accelerate muscle hypertrophy.
+                </p>
+
+                <div class="nutrition-cards-wrapper">
+                    <div class="nutri-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="nutri-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                        <div class="nutri-info">
+                            <h3>Personalized Diet Plans</h3>
+                            <p>Macro-calculated meals tailored specifically to your body type, metabolism, and fitness
+                                goals.</p>
+                        </div>
+                    </div>
+
+                    <div class="nutri-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="nutri-icon"><i class="fa-solid fa-pills"></i></div>
+                        <div class="nutri-info">
+                            <h3>Supplement Guidance</h3>
+                            <p>Science-backed recommendations for whey, creatine, amino acids, and essential vitamins.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="nutri-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="nutri-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="nutri-info">
+                            <h3>Weekly Check-ins</h3>
+                            <p>Continuous monitoring of your body composition with dynamic adjustments to keep you on
+                                track.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nutrition-visuals">
+                <div class="nutri-glow-bg"></div>
+
+                <div class="nutri-img-box main-box gsap-nutri-img1">
+                    <img src="asset/f12.webp" alt="Healthy Diet Meal">
+                </div>
+
+                <div class="nutri-img-box overlap-box gsap-nutri-img2">
+                    <img src="asset/f13.webp" alt="Protein Supplements">
+                </div>
+
+                <div class="nutri-floating-badge gsap-nutri-badge">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <div class="n-badge-text">
+                        <h4>100%</h4>
+                        <span>Customized</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="srv-pricing-cta" id="pricing-cta">
+        <div class="pricing-bg-overlay"></div>
+        <div class="pricing-container">
+            <div class="pricing-header gsap-pricing-head">
+                <div class="subtitle-badge">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Membership</span>
+                </div>
+                <h2 class="section-title">CHOOSE YOUR <span class="neon-text">ARSENAL</span></h2>
+                <p class="srv-desc-center">Select the membership tier that matches your ambition. No hidden fees, no
+                    compromises. Just raw results.</p>
+            </div>
+
+            <div class="pricing-cards-wrapper">
+                <div class="pricing-card">
+                    <div class="card-glow-bg"></div>
+                    <div class="card-content">
+                        <div class="plan-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                        <h3 class="plan-name">PRO FORGE</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span><span class="amount">49</span><span
+                                class="duration">/mo</span>
+                        </div>
+                        <p class="plan-desc">For those who want access to premium equipment and group energy.</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fa-solid fa-check"></i> All Group Classes</li>
+                            <li><i class="fa-solid fa-check"></i> Locker & Shower Access</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Personal Training</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Spa & Recovery</li>
+                        </ul>
+                        <a href="404.html" class="btn-outline-glow w-100">Select Pro</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card elite-card">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-glow-bg"></div>
+                    <div class="card-content">
+                        <div class="plan-icon"><i class="fa-solid fa-crown"></i></div>
+                        <h3 class="plan-name">ELITE FORGE</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span><span class="amount">99</span><span
+                                class="duration">/mo</span>
+                        </div>
+                        <p class="plan-desc">The ultimate package for those who demand nothing but the absolute best.
+                        </p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fa-solid fa-check"></i> All Group Classes</li>
+                            <li><i class="fa-solid fa-check"></i> VIP Locker & Sauna</li>
+                            <li><i class="fa-solid fa-check"></i> 4 PT Sessions / Month</li>
+                            <li><i class="fa-solid fa-check"></i> Full Recovery & Spa Access</li>
+                        </ul>
+                        <a href="404.html" class="btn-primary-glow w-100">Select Elite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium" id="contact">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <a href="index.html" class="logo">
+                        <img src="./asset/Stackly-orange-logo.png" alt="Logo" class="logo">
+                    </a>
+                    <ul class="footer-contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Periyakollappatty, Chinna Thirupathi,
+                            Salem, Tamil Nadu
+                        </li>
+                        <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="404.html">Strength Training</a></li>
+                        <li><a href="404.html">Cardio Endurance</a></li>
+                        <li><a href="404.html">Yoga & Flexibility</a></li>
+                        <li><a href="404.html">CrossFit</a></li>
+                        <li><a href="404.html">Personal Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <h3>Join Our Inner Circle</h3>
+                    <p>Subscribe to our newsletter for exclusive fitness tips, early access to programs, and diet plan
+                        inspiration.</p>
+                    <form class="newsletter-form" id="newsletter-form" novalidate>
+                        <div class="input-container">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="error-message" id="email-error">Please enter a valid email address.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 IronForge Fitness. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2, // ஸ்மூத்னஸ் வேகம் (நார்மல் 1.2)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // எஃபெக்ட் ஸ்மூத்னஸ்
+            smooth: true,
+            mouseMultiplier: 1,
+        });
+
+
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+
+        gsap.ticker.lagSmoothing(0);
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        });
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-srv-elem", {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out",
+            delay: 0.2
+        });
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-pt-img", {
+            scrollTrigger: {
+                trigger: ".srv-personal-image",
+                start: "top 75%",
+            },
+            x: -100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out"
+        });
+
+        gsap.from(".gsap-pt-badge", {
+            scrollTrigger: {
+                trigger: ".srv-personal-image",
+                start: "top 60%",
+            },
+            scale: 0,
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5,
+            ease: "back.out(1.7)"
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-group-head", {
+            scrollTrigger: {
+                trigger: ".srv-group-classes",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".gsap-class-card", {
+            scrollTrigger: {
+                trigger: ".group-class-grid",
+                start: "top 75%",
+            },
+            y: 80,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-regimen-head", {
+            scrollTrigger: {
+                trigger: ".srv-regimens",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.utils.toArray(".gsap-regimen-row").forEach((row) => {
+            gsap.from(row.querySelector(".regimen-image"), {
+                scrollTrigger: {
+                    trigger: row,
+                    start: "top 75%",
+                },
+                y: 60,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-rec-head", {
+            scrollTrigger: {
+                trigger: ".srv-recovery",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".gsap-rec-img", {
+            scrollTrigger: {
+                trigger: ".recovery-wrapper",
+                start: "top 75%",
+            },
+            x: -100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out"
+        });
+
+        gsap.from(".gsap-rec-panel", {
+            scrollTrigger: {
+                trigger: ".recovery-wrapper",
+                start: "top 70%",
+            },
+            x: 100,
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-nutri-img1", {
+            scrollTrigger: {
+                trigger: ".nutrition-visuals",
+                start: "top 75%",
+            },
+            x: 100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out"
+        });
+
+        gsap.from(".gsap-nutri-img2", {
+            scrollTrigger: {
+                trigger: ".nutrition-visuals",
+                start: "top 75%",
+            },
+            y: 100,
+            x: -50,
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+
+        gsap.from(".gsap-nutri-badge", {
+            scrollTrigger: {
+                trigger: ".nutrition-visuals",
+                start: "top 70%",
+            },
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            delay: 0.8,
+            ease: "back.out(1.7)"
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".gsap-pricing-head", {
+            scrollTrigger: {
+                trigger: ".srv-pricing-cta",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".gsap-pricing-card", {
+            scrollTrigger: {
+                trigger: ".pricing-cards-wrapper",
+                start: "top 75%",
+            },
+            y: 80,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "power4.out"
+        });
+    </script>
+</body>
+
+</html>
