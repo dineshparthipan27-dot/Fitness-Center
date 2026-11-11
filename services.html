@@ -135,7 +135,7 @@
             </div>
 
             <div class="group-class-grid">
-                <div class="class-card gsap-class-card">
+                <div class="class-card gsap-class-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <img src="asset/f5.webp" alt="HIIT Class" class="class-bg-img">
                     <div class="class-overlay"></div>
                     <div class="class-content">
@@ -147,7 +147,7 @@
                     </div>
                 </div>
 
-                <div class="class-card gsap-class-card">
+                <div class="class-card gsap-class-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <img src="asset/f3.webp" alt="Power Yoga" class="class-bg-img">
                     <div class="class-overlay"></div>
                     <div class="class-content">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="class-card gsap-class-card">
+                <div class="class-card gsap-class-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <img src="asset/f7.webp" alt="Aerobics & Cardio" class="class-bg-img">
                     <div class="class-overlay"></div>
                     <div class="class-content">
@@ -171,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="class-card gsap-class-card">
+                <div class="class-card gsap-class-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <img src="asset/fi.webp" alt="Combat Fitness" class="class-bg-img">
                     <div class="class-overlay"></div>
                     <div class="class-content">
@@ -618,18 +618,7 @@
             ease: "power3.out"
         });
 
-        gsap.from(".gsap-class-card", {
-            scrollTrigger: {
-                trigger: ".group-class-grid",
-                start: "top 75%",
-            },
-            y: 80,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.2,
-            ease: "power4.out"
-        });
-
+     
 
 
         gsap.registerPlugin(ScrollTrigger);

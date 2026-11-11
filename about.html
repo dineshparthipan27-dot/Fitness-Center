@@ -127,7 +127,7 @@
             </div>
 
             <div class="values-grid">
-                <div class="value-card gsap-value-card">
+                <div class="value-card gsap-value-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <i class="fa-solid fa-dumbbell value-bg-icon"></i>
                     <div class="value-icon"><i class="fa-solid fa-dumbbell"></i></div>
                     <h3>RESILIENCE</h3>
@@ -135,7 +135,7 @@
                         option.</p>
                 </div>
 
-                <div class="value-card gsap-value-card">
+                <div class="value-card gsap-value-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <i class="fa-solid fa-clock value-bg-icon"></i>
                     <div class="value-icon"><i class="fa-solid fa-clock"></i></div>
                     <h3>DISCIPLINE</h3>
@@ -143,7 +143,7 @@
                     </p>
                 </div>
 
-                <div class="value-card gsap-value-card">
+                <div class="value-card gsap-value-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <i class="fa-solid fa-users-rays value-bg-icon"></i>
                     <div class="value-icon"><i class="fa-solid fa-users-rays"></i></div>
                     <h3>COMMUNITY</h3>
@@ -151,7 +151,7 @@
                     </p>
                 </div>
 
-                <div class="value-card gsap-value-card">
+                <div class="value-card gsap-value-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <i class="fa-solid fa-arrow-trend-up value-bg-icon"></i>
                     <div class="value-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
                     <h3>EVOLUTION</h3>
@@ -541,17 +541,7 @@
             ease: "power3.out"
         });
 
-        gsap.from(".gsap-value-card", {
-            scrollTrigger: {
-                trigger: ".values-grid",
-                start: "top 75%",
-            },
-            y: 60,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "back.out(1.5)"
-        });
+ 
 
 
 
