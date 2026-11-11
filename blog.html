@@ -411,7 +411,7 @@
 
                     <div class="playlist-list">
 
-                        <div class="playlist-item active">
+                        <a href="404.html" class="playlist-item active">
                             <div class="pl-thumb">
                                 <img src="asset/f10.webp" alt="Motivation">
                                 <div class="pl-duration">08:20</div>
@@ -425,10 +425,10 @@
                                 <div class="bar"></div>
                                 <div class="bar"></div>
                             </div>
-                        </div>
+                        </a>
 
 
-                        <div class="playlist-item">
+                        <a href="404.html" class="playlist-item">
                             <div class="pl-thumb">
                                 <img src="asset/f12.webp" alt="Meal Prep">
                                 <div class="pl-duration">15:10</div>
@@ -438,10 +438,10 @@
                                 <h5>Pro Meal Prep: 5 Days of Macros</h5>
                                 <span>32.1K Views</span>
                             </div>
-                        </div>
+                        </a>
 
 
-                        <div class="playlist-item">
+                        <a href="404.html" class="playlist-item">
                             <div class="pl-thumb">
                                 <img src="asset/f13.webp" alt="Supplements">
                                 <div class="pl-duration">10:05</div>
@@ -451,10 +451,10 @@
                                 <h5>Supplements Explained: What Works?</h5>
                                 <span>45K Views</span>
                             </div>
-                        </div>
+                        </a>
 
 
-                        <div class="playlist-item">
+                        <a href="404.html" class="playlist-item">
                             <div class="pl-thumb">
                                 <img src="asset/f1.webp" alt="Deadlift">
                                 <div class="pl-duration">14:30</div>
@@ -464,7 +464,7 @@
                                 <h5>Deadlift: Prevent Lower Back Pain</h5>
                                 <span>89K Views</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -818,13 +818,7 @@
                 duration: 1.2,
                 ease: "power4.out"
             }, "-=0.8")
-            .from(".playlist-item", {
-                y: 30,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: "power3.out"
-            }, "-=0.5");
+          
 
 
         gsap.registerPlugin(ScrollTrigger);
