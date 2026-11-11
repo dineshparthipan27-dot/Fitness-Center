@@ -595,8 +595,8 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script>
         const lenis = new Lenis({
-            duration: 1.2, // ஸ்மூத்னஸ் வேகம் (நார்மல் 1.2)
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // எஃபெக்ட் ஸ்மூத்னஸ்
+            duration: 1.2, 
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
             smooth: true,
             mouseMultiplier: 1,
         });
@@ -687,7 +687,7 @@
 
 
         document.addEventListener("mousemove", (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 30; // 30px movement
+            const x = (e.clientX / window.innerWidth - 0.5) * 30; 
             const y = (e.clientY / window.innerHeight - 0.5) * 30;
 
             gsap.to(".gsap-parallax-bg", {
@@ -874,7 +874,7 @@
 
                 nlSubmitBtn.disabled = true;
                 btnText.innerText = "Sending...";
-                btnIcon.className = "fa-solid fa-spinner fa-spin"; // FontAwesome Spinner
+                btnIcon.className = "fa-solid fa-spinner fa-spin"; 
 
                 setTimeout(() => {
 
@@ -885,7 +885,7 @@
                     nlStatus.innerText = "Welcome to IronForge! Your subscription is confirmed.";
                     nlStatus.className = "nl-status-message success show";
                     nlEmail.value = "";
-                    window.location.href = "404.html"; // Clear input field
+                    window.location.href = "404.html"; 
 
 
                     setTimeout(() => {
