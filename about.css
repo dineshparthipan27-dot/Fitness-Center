@@ -645,7 +645,7 @@
     width: 100%;
     display: flex;
     margin-bottom: 60px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .left-row {
